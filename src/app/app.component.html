@@ -1,0 +1,28 @@
+<hello name="{{ name }}"></hello>
+
+<h2>Welcome my App</h2>
+
+<button class="btn btn-primary">Say Hello</button>
+
+<img
+  srcset="
+    https://via.placeholder.com/150,
+    https://via.placeholder.com/450 3x,
+    https://via.placeholder.com/600 4x
+  "
+  src="https://via.placeholder.com/150"
+  alt="Elva dressed as a fairy"
+/>
+
+<p appHighlight="color">Highlight me!</p>
+
+<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+  <div *ngFor="let field of formFields">
+    <label>{{ field.placeholder }}</label>
+    <input
+      [type]="field.type"
+      [placeholder]="field.placeholder"
+      [formControlName]="field.name"
+    />
+  </div>
+</form>
